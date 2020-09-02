@@ -2,6 +2,7 @@ package toString;
 
 import lombok.AllArgsConstructor;
 import lombok.ToString;
+import lombok.ToString.Exclude;
 
 public class MainToString {
 
@@ -10,7 +11,7 @@ public class MainToString {
 		// Lombok me fuerza a crear el objeto con todos los atributos por --> @AllArgsConstructor
 
 		Coche coche = new Coche("Seat", "Formentera", "0578-FBI");
-		Persona persona = new Persona("Juan", "Sánchez", "Cobos", 36, "56.878.112-Z", coche);
+		Persona persona = new Persona("Juan", "Sánchez", "Cobos", 36, "56.878.112-Z", coche, "campo excluido");
 
 		System.out.println("persona: " + persona.toString());
 		//System.out.println("coche: " + coche.toString());
@@ -51,6 +52,12 @@ class Persona{
 	public int edad;
 	public String dni;
 	public Coche coche;
+
+	// vale cualquiera de estas dos notaciones.
+	//@Exclude
+
+	@ToString.Exclude
+	public String campoExcluido;
 }
 
 @AllArgsConstructor @ToString
