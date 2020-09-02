@@ -1,7 +1,7 @@
 /**
  * 
  */
-package getters_setters;
+package getters_setters_01;
 
 import lombok.Getter;
 import lombok.Setter;
